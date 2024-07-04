@@ -1,0 +1,56 @@
+/* custom.css */
+
+.team-img {
+    max-width: 50px; /* Adjusted to 50px for initial size */
+    height: auto;
+    border-radius: 8px; /* Adding border-radius for curved edges */
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-info img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adding border-radius for curved edges */
+}
+
+.match-table th,
+.match-table td {
+    vertical-align: middle;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+.match-table th {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+}
+
+.maps-link {
+    text-align: center;
+}
+
+.maps-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.stadium-name {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .team-img {
+        max-width: 30%; /* Adjusted to 30% for smaller size on mobile */
+    }
+    .match-table th,
+    .match-table td {
+        font-size: 12px;
+    }
+}

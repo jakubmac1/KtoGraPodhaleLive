@@ -1,0 +1,85 @@
+/* General typography */
+body {
+    font-family: Arial, sans-serif; /* Use a professional sans-serif font */
+    font-size: 14px; /* Set base font size to 14px for smaller text */
+    line-height: 1.6; /* Improve readability with slightly increased line height */
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.site-header {
+    background-color: #2c3e50; /* Football theme color */
+    color: #fff; /* White text */
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 10px; /* Rounded corners for top */
+    border-top-right-radius: 10px;
+    margin-bottom: 20px; /* Space below header */
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Larger font size for heading */
+}
+
+/* Table styles */
+.match-table {
+    border-radius: 8px; /* Adding border-radius for curved edges */
+    overflow: hidden; /* Ensures content within curved border-radius */
+    font-size: 12px; /* Adjust font size for table content to be smaller */
+}
+
+.match-table th,
+.match-table td {
+    vertical-align: middle;
+    padding: 8px; /* Reduced padding for tighter spacing */
+}
+
+.match-table th {
+    font-size: 0.8rem; /* Adjusted font size for table headers */
+    font-weight: bold; /* Make table headers bold */
+}
+
+.team-img {
+    max-width: 50px; /* Adjusted to initial size */
+    height: auto;
+    border-radius: 8px; /* Adding border-radius for curved edges */
+    overflow: hidden; /* Ensures content within curved border-radius */
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-info img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adding border-radius for curved edges */
+    overflow: hidden; /* Ensures content within curved border-radius */
+}
+
+.maps-link {
+    text-align: center;
+}
+
+.maps-icon {
+    width: 24px; /* Reduced size of the Google Maps icon */
+    height: 24px;
+    margin-bottom: 4px; /* Adjusted spacing */
+}
+
+.stadium-name {
+    font-size: 0.7rem; /* Adjust font size for stadium name */
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .team-img {
+        max-width: 30%; /* Adjusted to 30% for smaller size on mobile */
+    }
+    .match-table th,
+    .match-table td {
+        font-size: 10px; /* Further reduced font size for smaller screens */
+    }
+}
