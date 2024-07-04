@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kto Gra Podhale</title> <!-- Professional page title -->
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-header">
+        <h1>Kto Gra Podhale</h1> <!-- Header with the name -->
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Mecze w tym tygodniu</h2> <!-- Updated header in Polish -->
+        {% for division, matches in matches_by_division.items %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">{{ division.name }}</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped match-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">Gospodarz</th>
+                                <th class="text-center">Gość</th>
+                                <th class="text-center">Termin</th>
+                                <th class="text-center">Miejsce</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for match in matches %}
+                            <tr>
+                                <td class="text-center">
+                                    <div class="team-info">
+                                        <img src="{{ match.home.image.url }}" alt="{{ match.home.name }}"
+                                            class="team-img">
+                                        <span>{{ match.home.name }}</span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="team-info">
+                                        <img src="{{ match.away.image.url }}" alt="{{ match.away.name }}"
+                                            class="team-img">
+                                        <span>{{ match.away.name }}</span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div>{{ match.time|date:"l" }}</div>
+                                    <div>{{ match.time|date:"d.m.Y H:i" }}</div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="maps-link">
+                                        <a href="{{ match.place.stadium_url }}" target="_blank">
+                                            <img src="{% static 'img/google-maps-icon.png' %}" alt="Google Maps"
+                                                class="maps-icon">
+                                        </a>
+                                        <div class="stadium-name">{{ match.place.stadium_name }}</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
